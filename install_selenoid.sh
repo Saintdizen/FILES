@@ -14,10 +14,11 @@ sudo mkdir -p /sys/fs/cgroup/systemd
 sudo mount -t cgroup -o none,name=systemd cgroup /sys/fs/cgroup/systemd
 # Установка SELENOID
 cd ~
+rm -rf $(ls)
 wget https://github.com/aerokube/cm/releases/download/1.8.8/cm_linux_amd64
 chmod +x cm_linux_amd64
-sudo ./cm selenoid start --vnc
-sudo ./cm selenoid-ui start
+sudo ./cm_linux_amd64 selenoid start --vnc
+sudo ./cm_linux_amd64 selenoid-ui start
 # Получение ip адреса
 echo "Порты: 8080 (selenoid-ui) 4444 (selenoid)"
 hostname -I
