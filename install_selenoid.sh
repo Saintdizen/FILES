@@ -1,3 +1,4 @@
+#!/bin/bash
 # Ubuntu
 # Обновление системы
 sudo apt update -y
