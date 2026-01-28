@@ -1,14 +1,14 @@
 #!/bin/bash
 # Ubuntu
 # Обновление системы
-sudo apt update -y
-sudo apt upgrade -y
+sudo apt update
+sudo apt upgrade
 # Установка DOCKER
-sudo apt install pt-transport-https ca-certificates curl software-properties-common wget net-tools -y
+sudo apt install pt-transport-https ca-certificates curl software-properties-common wget net-tools
 sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
 sudo apt update -y
-sudo apt install docker-ce=5:19.03.9~3-0~ubuntu-focal -y
+sudo apt install docker-ce=5:19.03.9~3-0~ubuntu-focal
 # Фикс x Failed to start: failed to start container: Error response from daemon: cgroups: cgroup mountpoint does not exist: unknown
 sudo mkdir -p /sys/fs/cgroup/systemd
 sudo mount -t cgroup -o none,name=systemd cgroup /sys/fs/cgroup/systemd
